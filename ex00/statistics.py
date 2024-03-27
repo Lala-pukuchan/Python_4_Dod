@@ -2,10 +2,16 @@ import numpy as np
 
 
 def mean(nums):
+    """
+    Calculates the mean of a list of numbers.
+    """
     return sum(nums) / len(nums)
 
 
 def median(nums):
+    """
+    Calculates the median of a list of numbers.
+    """
     n = len(nums)
     if n % 2 == 0:
         return (nums[n // 2 - 1] + nums[n // 2]) / 2
@@ -14,6 +20,9 @@ def median(nums):
 
 
 def percentile(nums, p):
+    """
+    Calculates the percentile of a list of numbers.
+    """
     n = len(nums)
     if p == 1:
         return nums[n // 4]
@@ -22,14 +31,24 @@ def percentile(nums, p):
 
 
 def std(nums):
+    """
+    Calculates the standard deviation of a list of numbers.
+    """
     return var(nums) ** 0.5
 
 
 def var(nums):
+    """
+    Calculates the variance of a list of numbers.
+    """
     return sum((x - mean(nums)) ** 2 for x in nums) / len(nums)
 
 
 def ft_statistics(*args: any, **kwargs: any) -> None:
+    """
+    Prints the mean, median, quartile, standard deviation,
+    and variance of a list of numbers.
+    """
     nums = sorted(np.array(args))
 
     for kwarg in kwargs:
